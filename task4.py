@@ -69,7 +69,7 @@ print(logger1.get_logs())  # Output: ['Log message 1', 'Log message 2', 'Log mes
 print(logger2.get_logs())  # Output: ['Log message 1', 'Log message 2', 'Log message 3']
 print(logger3.get_logs())  # Output: ['Log message 1', 'Log message 2', 'Log message 3']
 
-print("________________________________")
+print("__________________________________")
 
 # Solution 2
 # an alternative solution to implement the Singleton Logger using a class-level attribute:
