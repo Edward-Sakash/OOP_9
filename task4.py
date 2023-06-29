@@ -42,7 +42,6 @@ def singleton(class_):
 
     return wrapper
 
-
 @singleton
 class Logger:
     def __init__(self):

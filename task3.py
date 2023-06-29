@@ -106,4 +106,34 @@ b = FirstClass(23)
 # Check if a and b refer to the same instance
 print(a == b)  # True (Both variables reference the same instance)
 
+print("__________________________________________________")
+
+# Solution 4
+# with using Factory Pattern
+
+class FirstClass:
+    def __init__(self, m):
+        self.val = m
+
+class SecondClass:
+    def __init__(self, m):
+        self.val = m
+
+class SingletonFactory:
+    _instances = {}  # Dictionary to store the instances of each class
+
+    @classmethod
+    def create_instance(cls, class_name, *args, **kwargs):
+        if class_name not in cls._instances:  # Check if instance already exists
+            # Create a new instance of the specified class and store it in the dictionary
+            cls._instances[class_name] = class_name(*args, **kwargs)
+        return cls._instances[class_name]  # Return the instance
+
+# Create instances using the SingletonFactory
+factory = SingletonFactory()
+a = factory.create_instance(FirstClass, 1)  # Create an instance of FirstClass
+b = factory.create_instance(FirstClass, 23)  # Create another instance of FirstClass
+
+print(a == b)  # True, both a and b refer to the same instance of FirstClass
+
 
